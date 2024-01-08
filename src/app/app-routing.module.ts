@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {HomeComponent} from "./pages/home/home.component";
-import {ListTaskComponent} from "./components/task/list-task/list-task.component";
-import {AddTaskComponent} from "./components/task/add-task/add-task.component";
-import {EditTaskComponent} from "./components/task/edit-task/edit-task.component";
-import {DeleteTaskComponent} from "./components/task/delete-task/delete-task.component";
-import {ListUserComponent} from "./components/user/list-user/list-user.component";
-import {AddUserComponent} from "./components/user/add-user/add-user.component";
-import {EditUserComponent} from "./components/user/edit-user/edit-user.component";
-import {DeleteUserComponent} from "./components/user/delete-user/delete-user.component";
+import {ListTaskComponent} from "./tasks/list-task/list-task.component";
+import {AddTaskComponent} from "./tasks/add-task/add-task.component";
+import {EditTaskComponent} from "./tasks/edit-task/edit-task.component";
+import {DeleteTaskComponent} from "./tasks/delete-task/delete-task.component";
+import {ListUserComponent} from "./users/list-user/list-user.component";
+import {AddUserComponent} from "./users/add-user/add-user.component";
+import {EditUserComponent} from "./users/edit-user/edit-user.component";
+import {DeleteUserComponent} from "./users/delete-user/delete-user.component";
 const routes: Routes = [
   {
     path: "",

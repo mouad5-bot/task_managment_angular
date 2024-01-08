@@ -234,7 +234,7 @@
 
 
 
-<div class="row">
+<div class="row ms-5">
   <div class="col-lg-12">
     <div class="card m-3">
       <div class="card-body">
@@ -261,10 +261,10 @@
             </tr>
             </thead>
             <tbody>
-            <tr id="1">
+            <tr *ngFor="let task of taskList$ | async" id="1">
               <th scope="row"> 1 </th>
               <td> <img src="" alt=" " style=width:2rem; > </td>
-              <td> jhjhj </td>
+              <td> {{task.description}} </td>
               <td> jhjhj </td>
               <td> jhjhj </td>
               <td> jhjhj </td>

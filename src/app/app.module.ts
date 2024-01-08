@@ -9,15 +9,19 @@ import { HomeComponent } from './pages/home/home.component';
 import {CommonModule} from "@angular/common";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatPaginatorModule} from '@angular/material/paginator';
-import { AddTaskComponent } from './components/task/add-task/add-task.component';
-import { EditTaskComponent } from './components/task/edit-task/edit-task.component';
-import { DeleteTaskComponent } from './components/task/delete-task/delete-task.component';
-import { ListTaskComponent } from './components/task/list-task/list-task.component';
-import { ListUserComponent } from './components/user/list-user/list-user.component';
-import { EditUserComponent } from './components/user/edit-user/edit-user.component';
-import { DeleteUserComponent } from './components/user/delete-user/delete-user.component';
-import { AddUserComponent } from './components/user/add-user/add-user.component';
+import { AddTaskComponent } from './tasks/add-task/add-task.component';
+import { EditTaskComponent } from './tasks/edit-task/edit-task.component';
+import { DeleteTaskComponent } from './tasks/delete-task/delete-task.component';
+import { ListTaskComponent } from './tasks/list-task/list-task.component';
+import { ListUserComponent } from './users/list-user/list-user.component';
+import { EditUserComponent } from './users/edit-user/edit-user.component';
+import { DeleteUserComponent } from './users/delete-user/delete-user.component';
+import { AddUserComponent } from './users/add-user/add-user.component';
 import { StoreModule } from '@ngrx/store';
+import {taskReducer} from "./tasks/state/task.reducer";
+import { EffectsModule } from '@ngrx/effects';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import {TaskModule} from "./tasks/task.module";
 
 @NgModule({
   declarations: [
@@ -41,7 +45,10 @@ import { StoreModule } from '@ngrx/store';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatPaginatorModule,
-    StoreModule.forRoot({}, {})
+    StoreModule.forRoot({}, {}),
+    EffectsModule.forRoot([]),
+    StoreRouterConnectingModule.forRoot(),
+    TaskModule
   ],
   providers: [],
   bootstrap: [AppComponent],
