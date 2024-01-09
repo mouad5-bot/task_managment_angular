@@ -7,12 +7,12 @@ import { ITask } from '../models/task';
   providedIn: 'root'
 })
 export class TaskService {
-  private api = "http://localhost:8080/api/v1/task/";
+  private api = "http://localhost:8081/tasks";
 
   constructor(private http: HttpClient) { }
 
   getTasks(): Observable<ITask[]> {
-    return this.http.get<ITask[]>(this.api + "all");
+    return this.http.get<ITask[]>(this.api );
   }
 
   getTaskById(id: number): Observable<ITask> {

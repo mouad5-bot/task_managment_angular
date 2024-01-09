@@ -3,21 +3,25 @@ import {ITag} from "./tag";
 export class TaskClass implements ITask{
   constructor(
     public id?: number,
+    public title?: string,
     public description?: string,
-    public expDate?: Date,
-    public completed?: boolean,
-    public assignedDate?: Date,
-    public hasChanged?: boolean,
-    public tags?: ITag[]
+    public startDate?: Date,
+    public endDate?: Date,
+    public status?: string,
+    public assigneeId?: number,
+    public createdById?: number,
+    public tagIds?: ITag[]
   ) { }
 }
 
 export interface ITask{
-  id?: number;
-  description?: string;
-  expDate?: Date;
-  completed?: boolean;
-  assignedDate?: Date;
-  hasChanged?: boolean;
-  tags?: ITag[];
+   id?: number,
+   title?: string,
+   description?: string,
+   startDate?: Date,
+   endDate?: Date,
+   status?: string,
+   assigneeId?: number,
+   createdById?: number,
+   tagIds?: ITag[]
 }
