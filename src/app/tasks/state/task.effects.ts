@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { of } from 'rxjs';
+import {concatMap, of} from 'rxjs';
 import { catchError, map, mergeMap } from 'rxjs/operators';
 import * as TaskActions from './task.action';
 import { TaskService } from '../../services/task.service';
@@ -21,6 +21,18 @@ export class TaskEffects {
           )
         )
       );
+  });
+  addTask$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(TaskActions.addTask),
+      mergeMap((action) => {
+        console.log(action.task);
+        return this.taskService.addTask(action.task).pipe(
+          map(task => TaskActions.addTaskSuccess({task})),
+          catchError(error => of(TaskActions.addTaskFailure({ error })))
+        )
+      })
+    )
   });
 
 }

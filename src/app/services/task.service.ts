@@ -21,7 +21,7 @@ export class TaskService {
   }
 
   addTask(task: ITask): Observable<ITask> {
-    return this.http.post<ITask>(this.api, task);
+    return this.http.post<ITask>(this.api + '/1', task);
   }
 
   updateTask(id: number, updatedTask: ITask): Observable<ITask> {

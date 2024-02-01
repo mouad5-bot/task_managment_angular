@@ -10,7 +10,7 @@ import {TaskEffects} from "./state/task.effects";
   imports: [
     CommonModule,
     StoreModule.forFeature('tasks', taskReducer),
-    EffectsModule.forFeature([TaskEffects])
+    EffectsModule.forFeature([TaskEffects]),
   ]
 })
 export class TaskModule { }
